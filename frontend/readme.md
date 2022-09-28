@@ -24,3 +24,11 @@ Make sure your server is up and running to serve requests.
 - Profile page (URL: /#/@username, /#/@username/favorites )
   - Show basic user info
   - List of items populated from seller's items or user favorite items
+
+## Setting up local dev enviroment
+
+1. Navigate to your local directory
+
+2. From terminal, enter command "docker-compose up" - this will launch your backend/frontend. Verify by going to https:/localhost:3000/api/ping
+
+3. Similar steps follow for frontend

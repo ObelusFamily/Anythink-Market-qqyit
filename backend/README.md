@@ -20,3 +20,11 @@ The Anythink Market backend is Node web app written with [Express](https://expre
 ## Error Handling
 
 In `routes/api/index.js`, we define a error-handling middleware for handling Mongoose's `ValidationError`. This middleware will respond with a 422 status code and format the response to have [error messages the clients can understand](https://github.com/gothinkster/realworld/blob/master/API.md#errors-and-status-codes)
+
+## Setting up local dev enviroment
+
+1. Navigate to your local directory
+
+2. From terminal, enter command "docker-compose up" - this will launch your backend. Verify by going to https:/localhost:3000/api/ping
+
+3. Similar steps follow for frontend
