@@ -17,3 +17,5 @@ When implementing a new feature or fixing a bug, please create a new pull reques
 1. Navigate to your local directory
 
 2. From terminal, enter command "docker-compose up" - this will launch your backend. Verify by going to https:/localhost:3000/api/ping
+
+3. Similar steps follow for frontend
