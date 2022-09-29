@@ -10,10 +10,13 @@ import {
   EDITOR_PAGE_UNLOADED,
   UPDATE_FIELD_EDITOR,
 } from "../constants/actionTypes";
+import place from '../imgs/placeholder.png';
 
 const mapStateToProps = (state) => ({
   ...state.editor,
 });
+
+// const place = '/../imgs/placeholder.png';
 
 const mapDispatchToProps = (dispatch) => ({
   onAddTag: () => dispatch({ type: ADD_TAG }),
@@ -55,6 +58,7 @@ class Editor extends React.Component {
         image: this.props.image,
         tagList: this.props.tagList,
       };
+      if (item.image === undefined || item.image === '') item.image = place;
 
       const slug = { slug: this.props.itemSlug };
       const promise = this.props.itemSlug
@@ -62,6 +66,9 @@ class Editor extends React.Component {
         : agent.Items.create(item);
 
       this.props.onSubmit(promise);
+      console.log('here is the - ', item);
+      console.log('slug here - ', promise);
+
     };
   }
 
