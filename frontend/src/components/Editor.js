@@ -10,7 +10,6 @@ import {
   EDITOR_PAGE_UNLOADED,
   UPDATE_FIELD_EDITOR,
 } from "../constants/actionTypes";
-import place from '../imgs/placeholder.png';
 
 const mapStateToProps = (state) => ({
   ...state.editor,
@@ -58,10 +57,10 @@ class Editor extends React.Component {
         image: this.props.image,
         tagList: this.props.tagList,
       };
-      if (item.image === undefined || item.image === ''){
-        item.image = place;
-        this.changeImage(ev);
-      } 
+      // if (item.image === undefined || item.image === ''){
+      //   item.image = place;
+      //   this.changeImage(ev);
+      // } 
 
       const slug = { slug: this.props.itemSlug };
       const promise = this.props.itemSlug
