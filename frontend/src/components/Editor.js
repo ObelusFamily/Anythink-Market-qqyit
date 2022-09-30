@@ -58,7 +58,10 @@ class Editor extends React.Component {
         image: this.props.image,
         tagList: this.props.tagList,
       };
-      if (item.image === undefined || item.image === '') item.image = place;
+      if (item.image === undefined || item.image === ''){
+        item.image = place;
+        this.changeImage(ev);
+      } 
 
       const slug = { slug: this.props.itemSlug };
       const promise = this.props.itemSlug
