@@ -60,7 +60,7 @@ class Editor extends React.Component {
       // if (item.image === undefined || item.image === ''){
       //   item.image = place;
       //   this.changeImage(ev);
-      // } 
+      // }
 
       const slug = { slug: this.props.itemSlug };
       const promise = this.props.itemSlug
@@ -68,9 +68,8 @@ class Editor extends React.Component {
         : agent.Items.create(item);
 
       this.props.onSubmit(promise);
-      console.log('here is the - ', item);
-      console.log('slug here - ', promise);
-
+      console.log("here is the - ", item);
+      console.log("slug here - ", promise);
     };
   }
 
