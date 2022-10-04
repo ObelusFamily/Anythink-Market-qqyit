@@ -53,6 +53,11 @@ router.get("/", auth.optional, function(req, res, next) {
     query.tagList = { $in: [req.query.tag] };
   }
 
+  if (typeof req.query.title !== "undefined") {
+    query.title = { $regex: req.query.title };
+  }
+
+
   Promise.all([
     req.query.seller ? User.findOne({ username: req.query.seller }) : null,
     req.query.favorited ? User.findOne({ username: req.query.favorited }) : null
@@ -98,6 +103,7 @@ router.get("/", auth.optional, function(req, res, next) {
 });
 
 router.get("/feed", auth.required, function(req, res, next) {
+
   var limit = 20;
   var offset = 0;
 
@@ -108,6 +114,7 @@ router.get("/feed", auth.required, function(req, res, next) {
   if (typeof req.query.offset !== "undefined") {
     offset = req.query.offset;
   }
+
 
   User.findById(req.payload.id).then(function(user) {
     if (!user) {
